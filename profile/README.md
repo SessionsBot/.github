@@ -44,9 +44,8 @@ More repos will be added as we expand!
 ## 🌍 Who Is It For?
 
 - **Roblox Roleplay & Training Groups**
-- **Staff Teams & High Ranks** managing daily schedules
 - **Developers** looking for a Discord-based event system
-- Anyone who wants to simplify session coordination using Discord
+- **Anyone** who wants to simplify session coordination using Discord
 
 ---
 
