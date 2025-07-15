@@ -6,7 +6,7 @@ type: bug
 body:
   - type: markdown
     attributes:
-      value: "\n # Please fill out the following bug report as completely as possible. \n"
+      value: "\n #### Please fill out the following bug report as completely as possible. \n"
   - type: textarea
     id: description
     attributes:
