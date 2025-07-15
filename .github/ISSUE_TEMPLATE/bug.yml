@@ -1,0 +1,33 @@
+name: "🐛 Bug Report"
+description: "Report a reproducible bug"
+title: ""
+labels: [bug]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: "\n -# Please fill out the following bug report as completely as possible. \n"
+  - type: textarea
+    id: description
+    attributes:
+      label: Breif Description
+      description: "Simply describe the issue you're encountering."
+      placeholder: "When clicking ... this errors..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: "Where is the issue occuring?"
+      placeholder: "ex: Discord Bot, Web App, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: "List the exact steps to reproduce the issue."
+      placeholder: "1. Go to...\n2. Click on...\n3. Error appears"
+    validations:
+      required: true
