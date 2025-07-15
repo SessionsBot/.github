@@ -4,22 +4,20 @@
 
 We take the security of our projects and users seriously. If you discover a security vulnerability, we appreciate your help in disclosing it to us in a responsible manner.
 
-**Please DO NOT open a public GitHub issue.**
+> [!CAUTION]
+> **Please DO NOT open a public GitHub issue.**
 
 Instead, please report it via one of the following methods:
 
 * **Preferred Method (GitHub Security Advisories):** Use the [GitHub private vulnerability feature](https://github.com/apple/containerization/security/advisories/new) to privately report the vulnerability. This is the most secure and recommended way. You can initiate a private vulnerability report by going to the "Security" tab of the affected repository and clicking "Report a vulnerability."
 
-* **Email:** If the GitHub Security Advisories feature is not suitable, you can send an email directly to [halting.credo.00@icloud.com](mailto:halting.credo.00@icloud.com). Please encrypt your email with our PGP key (available upon request or find it here: [link to your PGP key]).
+* **Backup Method (Email):** If the GitHub Security Advisories feature is not available, you can send an email directly to [halting.credo.00@icloud.com](mailto:halting.credo.00@icloud.com). We kindly ask you only use this option as a backup if GitHub's Security Reporting is disabled/unavailable. Use encrypted email accounts only.
 
 
-## Our Commitment
+## Our Security Commitment
 
-We commit to:
+We take the security of our projects seriously and greatly value the efforts of the security community in identifying potential vulnerabilities. We are committed to maintaining a secure environment for all users and contributors.
 
-* Acknowledging your report within 2 business days.
-* Providing a full response (including a timeline for remediation) within 5 business days.
-* Keeping you informed of our progress.
-* Publicly acknowledging your contribution (unless you prefer to remain anonymous) once the vulnerability has been resolved.
+If you believe you’ve discovered a security issue, we appreciate your responsible disclosure and your help in keeping our work safe. While we may not be able to respond to every report individually, we review all submissions and treat each report with care and consideration.
 
-Thank you for helping us keep our projects secure!
+*Thank you for helping us improve the safety and integrity of our projects. - ♡*
