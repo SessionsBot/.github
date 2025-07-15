@@ -10,23 +10,27 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Breif Description
+      label: ✏️ Breif Description
       description: "Simply describe the issue you're encountering."
       placeholder: "When clicking ... this errors..."
     validations:
       required: true
-  - type: input
-    id: environment
+  - type: dropdown
+    id: location
     attributes:
-      label: Environment
+      label: 📍 Bug Location
       description: "Where is the issue occuring?"
-      placeholder: "ex: Discord Bot, Web App, etc."
+      options:
+        - Discord Bot
+        - Web Dashboard
+        - Authentication/API
+        - Other
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to Reproduce
+      label: 🪜 Steps to Reproduce
       description: "List the exact steps to reproduce the issue."
       placeholder: "1. Go to...\n2. Click on...\n3. Error appears"
     validations:
