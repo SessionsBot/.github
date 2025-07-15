@@ -4,6 +4,7 @@ about: Report an issue to help us improve
 title: ''
 labels: bug
 assignees: ''
+type: bug
 
 ---
 
