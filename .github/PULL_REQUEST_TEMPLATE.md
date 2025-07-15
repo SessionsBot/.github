@@ -48,5 +48,5 @@ Any setup, commands, or test accounts needed?
 ## 📸 Screenshots or Logs (Optional)
 
 <!--
-If this PR changes the UI or has visual/log output, consider attaching screenshots or logs here.
+If this PR changes the UI or has visual/log output, consider attaching screenshots or logs here if applicable.
 -->
