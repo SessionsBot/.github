@@ -1,0 +1,28 @@
+name: "🙏 Feature Request"
+description: "Report a reproducible bug"
+title: "🙏 - "
+type: Feature
+body:
+  - type: markdown
+    attributes:
+      value: "\n #### Please fill out the following request form as completely as possible. \n"
+  - type: textarea
+    id: description
+    attributes:
+      label: ✏️ Breif Description
+      description: "Simply describe the feature request you're wanting."
+      placeholder: "I wish there was a button to print money! Can you please add this to the user dashboard?"
+    validations:
+      required: true
+  - type: dropdown
+    id: location
+    attributes:
+      label: 📍 Feature Location
+      multiple: true
+      description: "Where do you want to use this feature?"
+      options:
+        - Discord Bot
+        - Web Dashboard
+        - Other
+    validations:
+      required: true

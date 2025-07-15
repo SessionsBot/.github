@@ -1,0 +1,38 @@
+name: "🛠️ New Task"
+description: "Log/plan upcoming work in current development"
+title: "🛠️ - "
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: "\n #### Please fill out the following task form as completely as possible. \n"
+  - type: input
+    id: description
+    attributes:
+      label: ✏️ Breif Description
+      description: "Simply describe the task to be completed."
+      placeholder: "Enhancing user experience within Guild Setup Process."
+    validations:
+      required: true
+  - type: dropdown
+    id: location
+    attributes:
+      label: 📍 Task Location
+      multiple: true
+      description: "Which location does this task involve?"
+      options:
+        - Discord Bot
+        - Web Dashboard
+        - Authentication/API
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: moreDetails
+    attributes:
+      label: 🏷️ More Details
+      description: "Provide any extra related information pertaining to the task."
+      placeholder: "- Add/improve styling \n - Make auth redirect faster \n - Etc."
+    validations:
+      required: false
