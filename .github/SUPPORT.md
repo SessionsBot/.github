@@ -14,20 +14,20 @@ If you’re looking for:
 - 💻 Troubleshooting help
 - 📣 Community conversation
 
-Please post in the [Discussions tab](../../discussions).  
+Please post in the ***Discussions*** tab.
 This is the best place for general support and talking with other users or contributors.
 
 ---
 
 ## 🐛 Found a Bug?
 
-Only report bugs using [GitHub Issues](../../issues) **if**:
+Report bugs using ***GitHub Issues*** - **if**:
 
 - You can reproduce it
 - It’s a technical issue in the codebase
 - You’ve searched and it’s not already reported
 
-Please use the **Bug Report template** and include as much detail as possible.
+Please use the *'Bug Report' template* and include as much detail as possible.
 
 ---
 
@@ -41,15 +41,13 @@ If you're contributing a feature or working on a dev task, create an Issue to tr
 
 Do **not** file public issues for security-related matters.
 
-Instead, use GitHub’s private advisory system:
 
-- 🔐 [Report a Security Vulnerability](../../security/advisories/new)
+Instead, use GitHub’s private reporting system!
+Please refer to our Security Policy for more information on reporting vulnerabilities.
 - 📃 [Our Security Policy](./SECURITY.md)
-
-Thank you for helping us keep the project safe!
 
 ---
 
 ## 🙏 Thank You
 
-We appreciate you being part of the community — your feedback, questions, and insights help improve this project for everyone! ♡
+We appreciate you being part of the community — your feedback, questions, and insights help improve this project for everyone!

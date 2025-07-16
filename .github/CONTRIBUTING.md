@@ -30,7 +30,7 @@ All changes must go through a pull request:
 
 ## 🚨 Issues Are for Actionable Items Only
 
-Please only open GitHub **[Issues](../../issues)** for:
+Please only open **GitHub Issues** for:
 
 - ✅ Verified bugs
 - 📦 Work-in-progress features that have been discussed
@@ -42,7 +42,7 @@ If your idea or problem doesn’t fit these, head to Discussions instead!
 
 ## 💬 Use Discussions for Everything Else!
 
-Use the [Discussions tab](../../discussions) for:
+Use the **Discussions tab** for:
 
 - 🤔 General questions or product support
 - 💡 Feature ideas or suggestions
@@ -55,9 +55,11 @@ This keeps the Issues tracker focused and actionable.
 
 ## 🛡️ Reporting Security Issues
 
-If you discover a security vulnerability, **please do not open an issue**.
+> [!CAUTION]
+> If you discover a security vulnerability, **please do not open an issue**.
 
-- 🔐 [Report a Security Vulnerability](../../security/advisories/new)
+
+Please review our Security Policy and **privately report a vulnerability**:
 - 📃 [Our Security Policy](./SECURITY.md)
 
 We take security seriously and appreciate responsible disclosures.
