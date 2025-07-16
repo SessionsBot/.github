@@ -45,7 +45,7 @@ If you witness or experience any behavior that violates this Code of Conduct, pl
 
 All reports will be handled **confidentially and carefully**. While we may not respond to every report directly, each will be reviewed thoughtfully.
 
-> [!CATUTION]
+> [!CAUTION]
 > ⚠️ **Please do not open public issues for Code of Conduct violations.**
 
 ---
