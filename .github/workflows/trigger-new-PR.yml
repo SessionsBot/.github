@@ -5,7 +5,7 @@ on:
 
 jobs:
   use-comment:
-    uses: SessionsBot/.github/workflow-templates/new-PR-comment.yml@main
+    uses: SessionsBot/.github/workflows/reuseable-PR-Comment.yml@main
     permissions:
       pull-requests: write
       issues: write
