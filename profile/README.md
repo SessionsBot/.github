@@ -43,6 +43,7 @@ More repos will be added as we expand!
 
 ## 🌍 Who Is It For?
 
+- **Roblox Roleplay & Training Groups**
 - **Developers** looking for a Discord-based event system
 - **Anyone** who wants to simplify session coordination using Discord
 
