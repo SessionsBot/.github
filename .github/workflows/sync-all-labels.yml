@@ -1,12 +1,13 @@
 name: Manual Label Sync - 🏷️
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       deleteUnmatched:
+        type: boolean
         description: 'Delete labels not in config? (true or false)'
         required: true
-        default: 'false'
+        default: false
 
 permissions:
   issues: write
