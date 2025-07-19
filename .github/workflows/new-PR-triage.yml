@@ -1,4 +1,5 @@
-name: "New Pull Request - Actions"
+# This is a reusable workflow to mark new PRs as in need of review
+name: "New Pull Request - Triage Needed"
 
 on:
   workflow_call:
@@ -8,9 +9,10 @@ permissions:
   issues: write
 
 jobs:
-  reusable-comment:
+  PR-TRIAGE-START:
     runs-on: ubuntu-latest
     steps:
+      # Post Thanks/Awaiting Review comment:
       - name: Post Comment
         uses: actions/github-script@v7
         with:
@@ -22,6 +24,7 @@ jobs:
               repo: context.repo.repo,
               body: "👋 Thanks for the Pull Request! One of our code reviewers will check this out as soon as possible."
             })
+      # Add 'Needs Review' label:
       - name: Add Triage Label
         uses: actions/github-script@v7
         with:
@@ -31,4 +34,16 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['Needs Review']
+            })
+      # Update 'Needs Review' label:
+      - name: UPDATE Triage Label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.updateLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: Needs Review
+              color: ff69b4
+              description: In need of review by a code admin
             })
