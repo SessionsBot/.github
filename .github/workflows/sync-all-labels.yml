@@ -28,6 +28,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const labelConfig = 'config-repo/.github/utils/label-config.json';
             const fs = require('fs');
             const labels = JSON.parse(fs.readFileSync(labelConfig, 'utf8'));
             const configLabelNames = labels.map(label => label.name);
