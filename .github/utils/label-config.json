@@ -1,0 +1,7 @@
+[
+  { "name": "Needs Review", "color": "ff69b4", "description": "In need of review by a code admin" },
+  { "name": "Bug", "color": "d73a4a", "description": "Something isn't working" },
+  { "name": "Feature", "color": "a2eeef", "description": "New functionality or request" },
+  { "name": "Outside Contributor", "color": "cfd3d7", "description": "Pull request from a non-org member" },
+  { "name": "Organization Contributor", "color": "0e8a16", "description": "Pull request from an org member" }
+]
