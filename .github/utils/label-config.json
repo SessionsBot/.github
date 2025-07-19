@@ -4,7 +4,7 @@
   { "name": "Accepted", "color": "b9f23d", "description": "These changes/code have been accepted" },
   { "name": "Rejected", "color": "e31919", "description": "These changes/code have been rejected" },
   
-  { "name": "Bug", "color": "d73a4a", "description": "Something isn't working right" },
+  { "name": "Bug", "color": "d13f4d", "description": "Something isn't working as expected" },
   { "name": "Feature", "color": "e36de3", "description": "New functionality or request" },
   { "name": "Task", "color": "24a2f0", "description": "A work item or general task" },
 
