@@ -1,7 +1,16 @@
 [
-  { "name": "Needs Review", "color": "ff69b4", "description": "In need of review by a code admin" },
-  { "name": "Bug", "color": "d73a4a", "description": "Something isn't working" },
-  { "name": "Feature", "color": "a2eeef", "description": "New functionality or request" },
-  { "name": "Outside Contributor", "color": "cfd3d7", "description": "Pull request from a non-org member" },
-  { "name": "Organization Contributor", "color": "0e8a16", "description": "Pull request from an org member" }
+  { "name": "Needs Review", "color": "f2733d", "description": "In need of review by a code admin" },
+  { "name": "Awaiting Changes", "color": "f0b324", "description": "In need of further changes before proceeding" },
+  { "name": "Accepted", "color": "b9f23d", "description": "These changes/code have been accepted" },
+  { "name": "Rejected", "color": "e31919", "description": "These changes/code have been rejected" },
+  
+  { "name": "Bug", "color": "d73a4a", "description": "Something isn't working right" },
+  { "name": "Feature", "color": "e36de3", "description": "New functionality or request" },
+  { "name": "Task", "color": "24a2f0", "description": "A work item or general task" },
+
+  { "name": "URGENT", "color": "ff1717", "description": "Shall be reviewed/fixed with urgency" },
+  { "name": "Low Priority", "color": "cc732f", "description": "Non critical issues, low urgency" },
+
+  { "name": "Outside Contributor", "color": "92c1f0", "description": "Pull request/issue from a non-org member" },
+  { "name": "Organization Contributor", "color": "8ceb34", "description": "Pull request/issue from an org member" }
 ]

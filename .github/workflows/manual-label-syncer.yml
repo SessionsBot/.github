@@ -1,9 +1,12 @@
-# This is a basic lable syncing action configured by /.github/utils/label-config.json
-
-name: 🏷️ Manual Label Sync
+name: Manual Label Sync - 🏷️
 
 on:
   workflow_dispatch:
+    inputs:
+      deleteUnmatched:
+        description: 'Delete labels not in config? (true or false)'
+        required: true
+        default: 'false'
 
 permissions:
   issues: write
@@ -22,6 +25,8 @@ jobs:
           script: |
             const fs = require('fs');
             const labels = JSON.parse(fs.readFileSync('.github/utils/label-config.json', 'utf8'));
+            const configLabelNames = labels.map(label => label.name);
+            const shouldDeleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
 
             for (const label of labels) {
               try {
@@ -31,7 +36,6 @@ jobs:
                   name: label.name
                 });
 
-                // If it exists, update:
                 await github.rest.issues.updateLabel({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
@@ -43,7 +47,6 @@ jobs:
                 console.log(`✅ Updated label: ${label.name}`);
               } catch (error) {
                 if (error.status === 404) {
-                  // Create if it doesn't exist:
                   await github.rest.issues.createLabel({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -51,10 +54,27 @@ jobs:
                     color: label.color,
                     description: label.description
                   });
-
                   console.log(`➕ Created label: ${label.name}`);
                 } else {
                   throw error;
+                }
+              }
+            }
+
+            if (shouldDeleteUnmatched) {
+              const allLabels = await github.paginate(github.rest.issues.listLabelsForRepo, {
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+
+              for (const existingLabel of allLabels) {
+                if (!configLabelNames.includes(existingLabel.name)) {
+                  await github.rest.issues.deleteLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: existingLabel.name
+                  });
+                  console.log(`🗑️ Deleted label not in config: ${existingLabel.name}`);
                 }
               }
             }
