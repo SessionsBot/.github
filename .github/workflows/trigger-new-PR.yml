@@ -6,7 +6,7 @@ on:
 
 jobs:
   Begin-PR-Triage:
-    uses: SessionsBot/.github/.github/workflows/reuseable-PR-Comment.yml@main
+    uses: SessionsBot/.github/.github/workflows/new-PR-triage.yml@main
     permissions:
       pull-requests: write
       issues: write
