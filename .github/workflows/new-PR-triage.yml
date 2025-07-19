@@ -43,7 +43,7 @@ jobs:
             github.rest.issues.updateLabel({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: 'Needs Review'
-              color: 'ff69b4'
+              name: 'Needs Review',
+              color: 'ff69b4',
               description: 'In need of review by a code admin'
             })
