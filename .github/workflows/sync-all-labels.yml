@@ -16,16 +16,21 @@ jobs:
   sync-labels:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout - Config repository
         uses: actions/checkout@v4
+        with:
+          repository: SessionsBot/.github
+          ref: main
+          path: config-repo
 
-      - name: Sync labels from config
+      - name: Sync labels - Config file
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const labelConfig = config-repo/.github/utils/label-config.json@main
             const fs = require('fs');
-            const labels = JSON.parse(fs.readFileSync('https://github.com/SessionsBot/.github/blob/main/.github/utils/label-config.json', 'utf8'));
+            const labels = JSON.parse(fs.readFileSync(labelConfig, 'utf8'));
             const configLabelNames = labels.map(label => label.name);
             const shouldDeleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
 
@@ -79,3 +84,7 @@ jobs:
                 }
               }
             }
+      - name: Sync labels - Config file
+        run: | 
+          ECHO 'Label sync has completed successfully!'
+
