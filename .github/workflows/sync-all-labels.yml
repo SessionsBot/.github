@@ -85,6 +85,8 @@ jobs:
               }
             }
       - name: Sync labels - Config file
-        run: | 
-          ECHO 'Label sync has completed successfully!'
-
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log('✅ Yay! This job has completed successfully!')
