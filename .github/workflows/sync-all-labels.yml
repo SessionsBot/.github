@@ -34,6 +34,27 @@ jobs:
             const configLabelNames = labels.map(label => label.name);
             const shouldDeleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
 
+            // Delete labels if specified:
+            if (shouldDeleteUnmatched) {
+              const allLabels = await github.paginate(github.rest.issues.listLabelsForRepo, {
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+
+              for (const existingLabel of allLabels) {
+                if (!configLabelNames.includes(existingLabel.name)) {
+                  await github.rest.issues.deleteLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: existingLabel.name
+                  });
+                  console.log(`🗑️ Deleted label not in config: ${existingLabel.name}`);
+                }
+              }
+            }
+
+
+            // Add new labels from config:
             for (const label of labels) {
               try {
                 await github.rest.issues.getLabel({
@@ -67,23 +88,6 @@ jobs:
               }
             }
 
-            if (shouldDeleteUnmatched) {
-              const allLabels = await github.paginate(github.rest.issues.listLabelsForRepo, {
-                owner: context.repo.owner,
-                repo: context.repo.repo
-              });
-
-              for (const existingLabel of allLabels) {
-                if (!configLabelNames.includes(existingLabel.name)) {
-                  await github.rest.issues.deleteLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: existingLabel.name
-                  });
-                  console.log(`🗑️ Deleted label not in config: ${existingLabel.name}`);
-                }
-              }
-            }
       - name: Sync labels - Config file
         uses: actions/github-script@v7
         with:
