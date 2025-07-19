@@ -1,4 +1,4 @@
-name: "New Pull Request"
+name: "New Pull Request - Trigger"
 
 on:
   pull_request:
