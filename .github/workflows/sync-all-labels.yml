@@ -25,7 +25,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const labels = JSON.parse(fs.readFileSync('.github/utils/label-config.json', 'utf8'));
+            const labels = JSON.parse(fs.readFileSync('https://github.com/SessionsBot/.github/blob/main/.github/utils/label-config.json', 'utf8'));
             const configLabelNames = labels.map(label => label.name);
             const shouldDeleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
 
