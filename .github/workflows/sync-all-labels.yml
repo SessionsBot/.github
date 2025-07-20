@@ -28,7 +28,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const syncLabels = require('./config-repo/.github/scripts/sync-labels.js');
+            const syncLabels = require('./' + config-repo + '/.github/scripts/sync-labels.js');
             const deleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
             await syncLabels({ github, context, core }, deleteUnmatched);
 
