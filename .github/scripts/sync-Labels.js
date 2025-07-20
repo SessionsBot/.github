@@ -2,8 +2,25 @@ const fs = require('fs');
 
 module.exports = async ({github, context, core}, deleteUnmatched = false) => {
 
-    const labelConfig = 'config-repo/.github/utils/label-config.json';
-    const labels = JSON.parse(fs.readFileSync(labelConfig, 'utf8'));
+    // Label Map:
+    const labels = [
+        { name: "Needs Review", color: "f2733d", description: "In need of review by a code admin" },
+        { name: "Awaiting Changes", color: "f0b324", description: "In need of further changes before proceeding" },
+        { name: "Accepted", color: "b9f23d", description: "These changes/code have been accepted" },
+        { name: "Rejected", color: "e31919", description: "These changes/code have been rejected" },
+        
+        { name: "Bug", color: "d13f4d", description: "Something isn't working as expected" },
+        { name: "Feature", color: "e36de3", description: "New functionality or request" },
+        { name: "Task", color: "24a2f0", description: "A work item or general task" },
+
+        { name: "URGENT", color: "ff1717", description: "Shall be reviewed/fixed with urgency" },
+        { name: "Low Priority", color: "cc732f", description: "Non critical issues, low urgency" },
+
+        { name: "Outside Contributor", color: "92c1f0", description: "Pull request/issue from a non-org member" },
+        { name: "Organization Contributor", color: "8ceb34", description: "Pull request/issue from an org member" }
+    ]
+
+
     const configLabelNames = labels.map(label => label.name);
     const shouldDeleteUnmatched = github.event.inputs.deleteUnmatched === true;
 
