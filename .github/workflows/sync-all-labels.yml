@@ -28,65 +28,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const labelConfig = 'config-repo/.github/utils/label-config.json';
-            const fs = require('fs');
-            const labels = JSON.parse(fs.readFileSync(labelConfig, 'utf8'));
-            const configLabelNames = labels.map(label => label.name);
-            const shouldDeleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
-
-            // Delete labels if specified:
-            if (shouldDeleteUnmatched) {
-              const allLabels = await github.paginate(github.rest.issues.listLabelsForRepo, {
-                owner: context.repo.owner,
-                repo: context.repo.repo
-              });
-
-              for (const existingLabel of allLabels) {
-                if (!configLabelNames.includes(existingLabel.name)) {
-                  await github.rest.issues.deleteLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: existingLabel.name
-                  });
-                  console.log(`🗑️ Deleted label not in config: ${existingLabel.name}`);
-                }
-              }
-            }
-
-
-            // Add new labels from config:
-            for (const label of labels) {
-              try {
-                await github.rest.issues.getLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  name: label.name
-                });
-
-                await github.rest.issues.updateLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  name: label.name,
-                  color: label.color,
-                  description: label.description
-                });
-
-                console.log(`✅ Updated label: ${label.name}`);
-              } catch (error) {
-                if (error.status === 404) {
-                  await github.rest.issues.createLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: label.name,
-                    color: label.color,
-                    description: label.description
-                  });
-                  console.log(`➕ Created label: ${label.name}`);
-                } else {
-                  throw error;
-                }
-              }
-            }
+            const path = require('path');
+            const syncLabels = require('././scripts/sync-labels.js');
+            const deleteUnmatched = '${{ github.event.inputs.deleteUnmatched }}' === 'true';
+            await syncLabels({ github, context, core }, deleteUnmatched);
 
       - name: Sync labels - Config file
         uses: actions/github-script@v7
