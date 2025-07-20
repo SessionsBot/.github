@@ -19,16 +19,13 @@ module.exports = async ({github, context, core}, deleteUnmatched = false) => {
         { name: "Outside Contributor", color: "92c1f0", description: "Pull request/issue from a non-org member" },
         { name: "Organization Contributor", color: "8ceb34", description: "Pull request/issue from an org member" }
     ]
-
-
     const configLabelNames = labels.map(label => label.name);
-    const shouldDeleteUnmatched = github.event.inputs.deleteUnmatched === true;
 
     // Debug:
     core.info(`Job triggered by ${context.actor} from js file!`);
 
     // Delete labels if specified:
-    if (shouldDeleteUnmatched) {
+    if (deleteUnmatched) {
 
         const allLabels = await github.paginate(github.rest.issues.listLabelsForRepo, {
             owner: context.repo.owner,
