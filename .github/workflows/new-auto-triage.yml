@@ -21,18 +21,21 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const org = 'SessionsBot';
-
+            const triggerType = context.eventName;
+            console.log("Event triggered by:", triggerType);
             let username;
             let issue_number;
+            let labelsToAdd = [];
 
             // Check for event trigger type:
-            if (context.payload.pull_request) {
+            if (triggerType == 'pull_request') { 
               username = context.payload.pull_request.user.login;
               issue_number = context.payload.pull_request.number;
-            } else if (context.payload.issue) {
+            } else if (triggerType == 'issues') {
               username = context.payload.issue.user.login;
               issue_number = context.payload.issue.number;
             } else {
+              console.log('An unknown trigger type was passed:', triggerType);
               throw new Error("This workflow only supports issues or pull requests.");
             }
 
@@ -44,12 +47,18 @@ jobs:
                 org,
                 username
               });
+              // No Error -- Org Member:
               isMember = true;
               console.log(`${username} is a member of ${org}`);
+              labelsToAdd.push('Organization Contributor');
             } catch (error) {
               if (error.status === 404) {
+                // 404 Error -- Non Org Member:
                 console.log(`${username} is NOT a member of ${org}`);
+                labelsToAdd.push('Outside Contributor');
+                labelsToAdd.push('Needs Review');
               } else {
+                // Unknown Error:
                 throw error;
               }
             }
@@ -62,7 +71,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number,
-              labels: [isMember ? 'Organization Contributor' : 'Outside Contributor', 'Needs Review']
+              labels: labelsToAdd
             });
 
 
