@@ -1,4 +1,5 @@
 name: "New Contribution - Auto Triage"
+run-name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}}
 
 on:
   workflow_call:
@@ -19,7 +20,20 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const org = 'SessionsBot';
-            const username = context.payload.pull_request.user.login;
+
+            let username;
+            let issue_number;
+
+            if (context.payload.pull_request) {
+              username = context.payload.pull_request.user.login;
+              issue_number = context.payload.pull_request.number;
+            } else if (context.payload.issue) {
+              username = context.payload.issue.user.login;
+              issue_number = context.payload.issue.number;
+            } else {
+              throw new Error("This workflow only supports issues or pull requests.");
+            }
+
             let isMember = false;
 
             try {
@@ -37,16 +51,15 @@ jobs:
               }
             }
 
-            // Set output so we can use in `if:` conditions
             core.setOutput('is_member', isMember);
 
-            // Add label depending on membership
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number,
+              issue_number,
               labels: [isMember ? 'Organization Contributor' : 'Outside Contributor', 'Needs Review']
             });
+
 
       # STEP 2: Only post comment if it's an outside contributor (optional)
       - name: Post Thanks Comment
