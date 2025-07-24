@@ -1,5 +1,5 @@
 name: "New Contribution - Auto Triage"
-run-name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}}
+
 
 on:
   workflow_call:
@@ -11,6 +11,7 @@ permissions:
 jobs:
   TRIAGE-START:
     runs-on: ubuntu-latest
+    name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}}
     steps:
       # STEP 1: Check if contributing author is a member of the organization & adds triage labels
       - name: Check Org Membership
