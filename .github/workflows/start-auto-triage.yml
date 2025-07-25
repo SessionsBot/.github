@@ -18,7 +18,7 @@ jobs:
             repository: SessionsBot/.github
             ref: main
             path: configRepo
-
+            
         - name: 📋 Start Triage
           uses: actions/github-script@v7
           with:

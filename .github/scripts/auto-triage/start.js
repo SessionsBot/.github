@@ -17,9 +17,11 @@ module.exports = async ({github, context, core}) => {
     if (context.payload['pull_request']) { 
         username = context.payload.pull_request.user.login;
         issue_number = context.payload.pull_request.number;
+        console.log('[i] Triage was triggered by a Pull Request...');
     } else if (context.payload['issue']) {
         username = context.payload.issue.user.login;
         issue_number = context.payload.issue.number;
+        console.log('[i] Triage was triggered by a Issue...');
     } else {
         console.log('An unknown trigger/event type occured!',);
         throw new Error("This workflow only supports issues or pull requests.");
@@ -33,12 +35,12 @@ module.exports = async ({github, context, core}) => {
         });
         // No Error -- Org Member:
         isOrgMember = true;
-        console.log(`${username} is a member of ${org}`);
+        console.log(`[i] ${username} is a member of ${org}!`);
         labelsToAdd.push('Organization Contributor');
     } catch (error) {
         if (error.status === 404) {
             // 404 Error -- Non Org Member:
-            console.log(`${username} is NOT a member of ${org}`);
+            console.log(`[i] ${username} is NOT a member of ${org}...`);
             labelsToAdd.push('Outside Contributor', 'Needs Review');
         } else {
             // Unknown Error:
@@ -47,6 +49,8 @@ module.exports = async ({github, context, core}) => {
     }
 
     // Add triage labels:
+    console.log('[i] Adding Triage Labels:')
+    console.log(labelsToAdd.toString())
     await github.rest.issues.addLabels({
         owner: context.repo.owner,
         repo: context.repo.repo,
@@ -55,6 +59,7 @@ module.exports = async ({github, context, core}) => {
     });
 
     // Post thank you comment for outside contributors:
+    console.log('[i] Posting Thank You Comment:', !isOrgMember)
     if(!isOrgMember){
         github.rest.issues.createComment({
             issue_number: issue_number,
@@ -63,4 +68,8 @@ module.exports = async ({github, context, core}) => {
             body: `👋 Thanks @${username} for your Contribution! One of our code reviewers will check this out as soon as possible.`
         })
     }
+
+    // Completed:
+    console.log('-- Success!')
+    return true
 }
