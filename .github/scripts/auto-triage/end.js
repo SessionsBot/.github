@@ -1,5 +1,7 @@
 // @ts-check
 
+const labelsToRemove = ['Needs Review', 'Awaiting Changes' ]
+
 /**
  * @param {object} params
  * @param {import('@octokit/rest').Octokit} params.github
@@ -34,14 +36,19 @@ module.exports = async ({github, context, core}) => {
         issue_number,
         per_page: 100
     })
+
     const existingLabelNames = exisitingLabels.data.map((label) => label.name)
 
     // DEBUG:
-    console.log('Exisiting Labels:')
-    console.log(exisitingLabels)
-
     console.log('Exisiting Label Names:')
     console.log(existingLabelNames)
+
+    // Remove any labels if required:
+    labelsToKeep = existingLabelNames.filter((labelName) => !labelsToRemove.includes(labelName))
+
+    // DEBUG:
+    console.log('Label Names TO KEEP:')
+    console.log(labelsToKeep)
 
     // Check for organization memebership:
     try {
