@@ -1,0 +1,32 @@
+name: "New Contribution - Auto Triage"
+
+on:
+  workflow_call:
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  Triage:
+    runs-on: ubuntu-latest
+    name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}}
+    steps:
+        - name: ⚙️ Checkout Repo
+          uses: actions/checkout@v4
+          with:
+            repository: SessionsBot/.github
+            ref: main
+            path: configRepo
+
+        - name: 📋 Start Triage
+          uses: actions/github-script@v7
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+              const startTriage = require('./configRepo/.github/scripts/auto-triage/start.js');
+              await startTriage({ github, context, core })
+
+        - name: 🥳 Success
+          run: echo Triage has completed successfully!
+           

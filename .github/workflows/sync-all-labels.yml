@@ -32,4 +32,4 @@ jobs:
             await syncLabels({ github, context, core }, deleteUnmatched);
 
       - name: Sync labels - Success
-        run: echo '✅ Success! This job has completed successfully!
+        run: echo ✅ Success! This job has completed successfully!

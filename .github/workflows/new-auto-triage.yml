@@ -1,6 +1,5 @@
 name: "New Contribution - Auto Triage"
 
-
 on:
   workflow_call:
 
