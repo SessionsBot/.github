@@ -1,14 +1,13 @@
+// @ts-check
+
 /**
- * PR Triage Script
- * Automatically labels new PRs for review.
- *
- * @param {object} params - Provided by github-script
- * @param {import('@actions/github').GitHub} params.github
- * @param {import('@actions/github/lib/context').Context} params.context
+ * @param {object} params
+ * @param {import('@octokit/rest').Octokit} params.github
+ * @param {typeof import('@actions/github')['context']} params.context
+ * @param {typeof import('@actions/core')} params.core
+ * @param {boolean} [deleteUnmatched]
+ * @returns {Promise<void>}
  */
-
-const fs = require('fs');
-
 module.exports = async ({github, context, core}, deleteUnmatched = false) => {
 
     // Label Map:
