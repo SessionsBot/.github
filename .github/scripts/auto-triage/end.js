@@ -40,6 +40,7 @@ module.exports = async ({github, context, core}) => {
     const existingLabelNames = exisitingLabels.data.map((label) => label.name)
 
     // DEBUG:
+    console.log('[i] Updating Triage Labels...');
     console.log('Exisiting Label Names:')
     console.log(existingLabelNames)
 
@@ -49,6 +50,14 @@ module.exports = async ({github, context, core}) => {
     // DEBUG:
     console.log('Label Names TO KEEP:')
     console.log(labelsToKeep)
+
+    // Update labels through REST API
+    await github.rest.issues.setLabels({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number,
+        labels: labelsToKeep
+    })
 
     // Check for organization memebership:
     try {

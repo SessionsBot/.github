@@ -10,7 +10,7 @@ permissions:
 jobs:
   Triage:
     runs-on: ubuntu-latest
-    name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}}
+    name: Contribution by ${{github.actor}} - Auto Triage
     steps:
         - name: ⚙️ Checkout Repo
           uses: actions/checkout@v4
