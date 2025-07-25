@@ -1,0 +1,52 @@
+name: "Closed Contribution - Auto Triage"
+
+# NOTES:
+  # Combine if(triggerType == '...') into one logic statment, currently doubbled
+
+on:
+  workflow_call:
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  TRIAGE-END:
+    runs-on: ubuntu-latest
+    name: Contribution by ${{github.actor}} - Auto Triage - ${{github.event_name}} | ${{ github.event.action }}
+    steps:
+      # Step 1: Apply Completion Labels:
+      - name: Triage End - Labels
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Variables:
+              const triggerType = context.eventName;
+              let username;
+              let issue_number;
+              let newLabels = [];
+
+            // Check for event trigger type - Get issue number:
+              if (triggerType == 'pull_request') { 
+                username = context.payload.pull_request.user.login;
+                issue_number = context.payload.pull_request.number;
+                newLabels = [];
+              } else if (triggerType == 'issues') {
+                username = context.payload.issue.user.login;
+                issue_number = context.payload.issue.number;
+                newLabels = [];
+              } else {
+                console.log('An unknown trigger type was passed:', triggerType);
+                throw new Error("This workflow only supports issues or pull requests.");
+              }
+    
+            // #- MAKE ADJUSTMENTS HERE
+            github.rest.issues.setLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              labels: ['']
+
+            })
+

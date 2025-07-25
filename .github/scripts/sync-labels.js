@@ -1,3 +1,12 @@
+/**
+ * PR Triage Script
+ * Automatically labels new PRs for review.
+ *
+ * @param {object} params - Provided by github-script
+ * @param {import('@actions/github').GitHub} params.github
+ * @param {import('@actions/github/lib/context').Context} params.context
+ */
+
 const fs = require('fs');
 
 module.exports = async ({github, context, core}, deleteUnmatched = false) => {
