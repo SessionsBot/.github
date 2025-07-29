@@ -48,6 +48,14 @@ Please refer to our Security Policy for more information on reporting vulnerabil
 
 ---
 
+
+## 🤯 Still need help?
+
+You can get in direct contact with a member of our Support Team by sending an email to [support@sessionsbot.fyi](mailto:support@sessionsbot.fyi)
+- Please allow at most 7 bussiness days for a reponse as our team is small.
+
+
+
 ## 🙏 Thank You
 
 We appreciate you being part of the community — your feedback, questions, and insights help improve this project for everyone!
