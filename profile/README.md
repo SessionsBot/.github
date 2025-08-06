@@ -9,6 +9,9 @@
 **A powerful Discord application for managing Roblox group sessions — streamlined, automated, and reliable.**  
 From scheduling to signups, SessionsBot handles it all!
 
+[*Invite the Discord Bot*](https://invite.sessionsbot.fyi)
+
+
 </div>
 
 ---
@@ -62,7 +65,6 @@ More repos will be added as we expand!
 
 🛠️ SessionsBot is currently under **active development**.  
 Some repositories may not be publicly available at this time!
-You can check our system statuses [here](https://status.sessionsbot.fyi).
 
 
 ---
