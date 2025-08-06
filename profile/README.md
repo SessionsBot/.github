@@ -52,9 +52,9 @@ More repos will be added as we expand!
 
 - **Backend**: Node.js, Discord.js
 - **Frontend**: Vue.js, Tailwind CSS, Vite
-- **Database**: Firebase / Firestore (currently)
-- **Auth**: Discord OAuth2
-- **Hosting**: [TBD – will be updated here]
+- **Database**: Firebase Firestore
+- **Auth**: Discord OAuth2 / Firebase Auth
+- **Hosting**: Koyeb
 
 ---
 
@@ -62,6 +62,8 @@ More repos will be added as we expand!
 
 🛠️ SessionsBot is currently under **active development**.  
 Some repositories may not be publicly available at this time!
+You can check our system statuses [here](https://status.sessionsbot.fyi).
+
 
 ---
 
