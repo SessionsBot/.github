@@ -65,6 +65,7 @@ More repos will be added as we expand!
 
 🛠️ SessionsBot is currently under **active development**.  
 Some repositories may not be publicly available at this time!
+View our system statuses [here](https://status.sessionsbot.fyi).
 
 
 ---
