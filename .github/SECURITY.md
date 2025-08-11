@@ -27,7 +27,7 @@ This is the most secure and recommended way to report vulnerabilities!
 
 If the GitHub Security Advisories feature is not *available or disabled*, please send an email to:
 
-📧 [halting.credo.00@icloud.com](mailto:halting.credo.00@icloud.com)
+📧 [support@sessionsbot.fyi](mailto:support@sessionsbot.fyi)
 
 *Please only use this method as a backup, and preferably via encrypted email accounts.*
 

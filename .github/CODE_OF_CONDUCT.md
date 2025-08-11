@@ -40,7 +40,7 @@ The following behaviors will **not be tolerated** in any form:
 
 If you witness or experience any behavior that violates this Code of Conduct, please **report it privately** via one of these channels:
 
-- 📧 Email: halting.credo.00@icloud.com  
+- 📧 Email: [support@sessionsbot.fyi](mailto:support@sessionsbot.fyi)
 - 🛡️ GitHub Contact Form: [Contact GitHub Support](https://support.github.com/contact)
 
 All reports will be handled **confidentially and carefully**. While we may not respond to every report directly, each will be reviewed thoughtfully.
