@@ -6,7 +6,7 @@
 
 # SessionsBot
 
-**A powerful Discord application for managing Roblox group sessions — streamlined, automated, and reliable.**  
+**A powerful Discord application for managing group events/sessions — streamlined, automated, and reliable.**  
 From scheduling to signups, SessionsBot handles it all!
 
 [![Invite Bot](https://img.shields.io/badge/Invite_Bot-0d8022?style=for-the-badge&logo=discord&logoColor=white)](https://invite.sessionsbot.fyi)
@@ -19,7 +19,7 @@ From scheduling to signups, SessionsBot handles it all!
 
 ## 📌 What is SessionsBot?
 
-SessionsBot is a multi-featured Discord bot designed to help Roblox communities manage **any scheduled group events** with ease.
+SessionsBot is a multi-featured Discord bot designed to help Discord communities manage **any scheduled group events** with ease.
 
 Built for simplicity and scalability, SessionsBot makes it easy for your team to:
 - 📅 **Create and manage sessions** directly from our web dashboard
@@ -47,8 +47,7 @@ More repos will be added as we expand!
 
 ## 🌍 Who Is It For?
 
-- **Developers** looking for a Discord-based event system
-- **Anyone** who wants to simplify session coordination using Discord
+**Anyone** who wants to simplify session coordination within their Discord Servers.
 
 ---
 
