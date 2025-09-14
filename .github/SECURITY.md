@@ -27,7 +27,7 @@ This is the most secure and recommended way to report vulnerabilities!
 
 If the GitHub Security Advisories feature is not *available or disabled*, please send an email to:
 
-📧 [support@sessionsbot.fyi](mailto:support@sessionsbot.fyi)
+📧 [security@sessionsbot.fyi](mailto:security@sessionsbot.fyi?subject=%F0%9F%9A%A8%20Security%20Report%20%7C%20TITLE)
 
 *Please only use this method as a backup, and preferably via encrypted email accounts.*
 
