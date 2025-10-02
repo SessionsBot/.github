@@ -9,8 +9,10 @@
 **A powerful Discord application for managing group events/sessions — streamlined, automated, and reliable.**  
 From scheduling to signups, SessionsBot handles it all!
 
-[![Invite Bot](https://img.shields.io/badge/Invite_Bot-0d8022?style=for-the-badge&logo=discord&logoColor=white)](https://invite.sessionsbot.fyi)
 [![Visit Site](https://img.shields.io/badge/Visit_Website-7e13b0?style=for-the-badge&logo=safari&logoColor=white)](https://sessionsbot.fyi)
+[![Invite Bot](https://img.shields.io/badge/Invite_Bot-0d8022?style=for-the-badge&logo=discord&logoColor=white)](https://invite.sessionsbot.fyi)
+![](https://img.shields.io/badge/View%20Docs-blue?style=for-the-badge&logo=safari&link=https%3A%2F%2Fdocs.sessionsbot.fyi)
+
 
 
 </div>
