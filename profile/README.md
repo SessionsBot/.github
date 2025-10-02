@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://github.com/SessionsBot/frontend-main/blob/ecb01f3baa3070415ec8504efc494123838dce65/src/assets/sessionsBotWithText.png" alt="SessionsBot Logo" width="200" />
+<img src="https://sessionsbot.fyi/sessionsBotWithText.png" alt="SessionsBot Logo" width="200" style="border-radius: 15px;" />
 
 # SessionsBot
 
@@ -31,6 +31,14 @@ Built for simplicity and scalability, SessionsBot makes it easy for your team to
 
 ---
 
+## 🌍 Who Is It For?
+
+- **Developers** looking for a Discord-based event system
+- **Anyone** who wants to simplify session coordination using Discord
+- **Study Groups** looking to collaboratively RSVP
+
+---
+
 ## 💻 Organization Structure
 
 This GitHub Organization hosts all code and documentation for the SessionsBot project:
@@ -42,14 +50,6 @@ This GitHub Organization hosts all code and documentation for the SessionsBot pr
 | [`DOCS`](https://github.com/SessionsBot/docs) | Developer & user documentation |
 
 More repos will be added as we expand!
-
----
-
-## 🌍 Who Is It For?
-
-- **Developers** looking for a Discord-based event system
-- **Anyone** who wants to simplify session coordination using Discord
-- **Study Groups** looking to collaboratively RSVP
 
 ---
 
@@ -65,8 +65,10 @@ More repos will be added as we expand!
 
 ## 📣 Status
 
-⚙️ SessionsBot is *proud to have 99%+ uptime* 
-You can view our status page [here](https://status.sessionsbot.fyi)
+**⚙️ SessionsBot is *proud to have 99%+ uptime***
+
+- You can view our status page [here](https://status.sessionsbot.fyi)
+
 This is a great resource to visit if your bot is experiencing connectivity issues.
 
 ---
@@ -79,7 +81,7 @@ If you're interested in helping out, feel free to:
 - ⭐ Star the repo(s)
 - 🐛 Submit issues or feature requests
 - 🔧 Open pull requests
-- 💬 Join our Discord Server  *(coming soon!)*
+- 💬 Join our [Discord Server](https://discord.gg/dKp5HZPjCg)
 
 ---
 
@@ -91,6 +93,6 @@ SessionsBot is released under the [MIT License](https://choosealicense.com/licen
 
 <div align="center">
 
-✨ Made with care by the SessionsBot Team ✨
+✨ Made with ♡ by the SessionsBot Team ✨
 
 </div>
