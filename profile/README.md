@@ -24,10 +24,10 @@ SessionsBot is a multi-featured Discord bot designed to help Discord communities
 Built for simplicity and scalability, SessionsBot makes it easy for your team to:
 - 📅 **Create and manage sessions** directly from our web dashboard
 - ⏰ **Set recurring schedules** for daily events
-- ✅ **Allow users to sign up for roles** (Customizable)
+- ✅ **Allow users to sign up for roles** (Customizable) within sessions
 - 🔔 **Send automatic reminders** before sessions start
-- 📊 **Track attendance and session data**
-- 🌐 **Configure/adjust via web dashboard**
+- 📊 **Track attendance and session data** from Discord
+- 🌐 **Configure/adjust via web dashboard** with ease
 
 ---
 
@@ -47,7 +47,9 @@ More repos will be added as we expand!
 
 ## 🌍 Who Is It For?
 
-**Anyone** who wants to simplify session coordination within their Discord Servers.
+- **Developers** looking for a Discord-based event system
+- **Anyone** who wants to simplify session coordination using Discord
+- **Study Groups** looking to collaboratively RSVP
 
 ---
 
@@ -63,10 +65,9 @@ More repos will be added as we expand!
 
 ## 📣 Status
 
-🛠️ SessionsBot is currently under **active development**.  
-Some repositories may not be publicly available at this time!
-View our system statuses [here](https://status.sessionsbot.fyi).
-
+⚙️ SessionsBot is *proud to have 99%+ uptime* 
+You can view our status page [here](https://status.sessionsbot.fyi)
+This is a great resource to visit if your bot is experiencing connectivity issues.
 
 ---
 
