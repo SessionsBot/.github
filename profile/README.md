@@ -45,13 +45,11 @@ Built for simplicity and scalability, SessionsBot makes it easy for your team to
 
 This GitHub Organization hosts all code and documentation for the SessionsBot project:
 
-| Repository | Description |
+| App (paths) | Description |
 |------------|-------------|
-| [`BACKEND`](https://github.com/SessionsBot/backend) | Core backend for the Discord bot (Node.js / Discord.js) |
-| [`FRONTEND`](https://github.com/SessionsBot/frontend) | Frontend web dashboard (Vue + Tailwind) |
-| [`DOCS`](https://github.com/SessionsBot/docs) | Developer & user documentation |
-
-More repos will be added as we expand!
+| [`BACKEND`](https://github.com/SessionsBot/SessionsBot/tree/main/apps/backend) | Core backend for the Discord bot (Node.js / Discord.js) |
+| [`FRONTEND`](https://github.com/SessionsBot/SessionsBot/tree/main/apps/frontend) | Frontend web dashboard (Vue + Tailwind) |
+| [`DOCS`](https://github.com/SessionsBot/SessionsBot/tree/main/apps/docs) | Developer & user documentation |
 
 ---
 
@@ -59,9 +57,9 @@ More repos will be added as we expand!
 
 - **Backend**: Node.js, Discord.js
 - **Frontend**: Vue.js, Tailwind CSS, Vite
-- **Database**: Firebase Firestore
-- **Auth**: Discord OAuth2 / Firebase Auth
-- **Hosting**: Koyeb
+- **Database**: Supabase Postgres
+- **Auth**: Discord OAuth2 / Supabase Auth
+- **Hosting**: Koyeb / Cloudlfare
 
 ---
 
